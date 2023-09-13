@@ -1,0 +1,67 @@
+<Window x:Class="CountersWPF.DopWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:lvc1="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+        xmlns:local="clr-namespace:CountersWPF"
+        mc:Ignorable="d"
+        Title="DopWindow" Height="450" Width="800">
+    
+    <Grid Background="#303030">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.ColumnSpan="2" Foreground="Aqua">
+            <TabItem Header="Текстовое представление информации">
+                <TextBox x:Name="ResultBox" FontSize="18" Background="#202424" Foreground="#879696" TextWrapping="Wrap" Margin="15 10 15 20" VerticalScrollBarVisibility="Visible" IsReadOnly="True"/>
+            </TabItem>
+            <TabItem Header="График">
+                <TabControl>
+                    <TabItem Header="Электричество">
+                        <lvc1:CartesianChart
+                            Series="{Binding PowerSeries}"
+                            XAxes="{Binding XAxes}"
+                            TooltipPosition="Top"
+                            TooltipTextBrush="#87969C"
+                            TooltipBackground="#202020"
+                            ZoomMode="X">
+                        </lvc1:CartesianChart>
+                    </TabItem>
+                    <TabItem Header="Холодная вода">
+                        <lvc1:CartesianChart
+                            Series="{Binding ColdSeries}"
+                            XAxes="{Binding XAxes}"
+                            TooltipPosition="Top"
+                            TooltipTextBrush="#87969C"
+                            TooltipBackground="#202020"
+                            ZoomMode="X">
+                        </lvc1:CartesianChart>
+                    </TabItem>
+                    <TabItem Header="Горячая вода">
+                        <lvc1:CartesianChart
+                            Series="{Binding HotSeries}"
+                            XAxes="{Binding XAxes}"
+                            TooltipPosition="Top"
+                            TooltipTextBrush="#87969C"
+                            TooltipBackground="#202020"
+                            ZoomMode="X">
+                        </lvc1:CartesianChart>
+                    </TabItem>
+                    <TabItem Header="Газ">
+                        <lvc1:CartesianChart
+                            Series="{Binding GasSeries}"
+                            XAxes="{Binding XAxes}"
+                            TooltipPosition="Top"
+                            TooltipTextBrush="#87969C"
+                            TooltipBackground="#202020"
+                            ZoomMode="X">
+                        </lvc1:CartesianChart>
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

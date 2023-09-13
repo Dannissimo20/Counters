@@ -1,0 +1,38 @@
+﻿<Window x:Class="CountersWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:entity="clr-namespace:CountersLibrary;assembly=CountersLibrary"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        xmlns:local="clr-namespace:CountersWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="780" Width="1250">
+    <Grid Background="#303030">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.65*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Внесение данных" FontSize="20" Margin="15 10 0 5" Foreground="#87969C"/>
+            <CheckBox x:Name="UserBox" Content="Ордженикидзе?" Margin=" 25 5 85 5" Foreground="#87969C" FontSize="16"/>
+            <TextBox x:Name="PowerBox" Margin=" 25 5 85 5" materialDesign:HintAssist.Hint="Электричество" Foreground="#87969C" FontSize="16"/>
+            <TextBox x:Name="ColdBox" Margin=" 25 5 85 5" materialDesign:HintAssist.Hint="Холодная вода" Foreground="#87969C" FontSize="16"/>
+            <TextBox x:Name="HotBox" Margin=" 25 5 85 5" materialDesign:HintAssist.Hint="Горячая вода" Foreground="#87969C" FontSize="16"/>
+            <TextBox x:Name="GasBox" Margin=" 25 5 85 5" materialDesign:HintAssist.Hint="Газ" Foreground="#87969C" FontSize="16"/>
+            <Button x:Name="AddBut" Margin=" 25 15 85 5" Content="Внести данные" Foreground="Orange" Background="#303030" Cursor="Hand" Click="AddBut_Click" FontSize="16"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Button x:Name="ChequeBut" Margin="25 60 85 5" Content="Переместить чеки в папку" Foreground="Orange" Background="#303030" Cursor="Hand" Click="ChequeBut_Click" FontSize="14"/>
+            <Button x:Name="LastPokazBut" Margin="25 24 85 5" Content="Показать последние данные" Foreground="Orange" Background="#303030" Cursor="Hand" Click="LastPokazBut_Click" FontSize="14"/>
+            <Button x:Name="AllPokazBut" Margin="25 24 85 5" Content="Показать все сохраненные показания" Foreground="Orange" Background="#303030" Cursor="Hand" Click="AllPokazBut_Click" FontSize="14"/>
+            <Button x:Name="AllResourcesBut" Margin="25 24 85 5" Content="Показать все потраченные ресурсы" Foreground="Orange" Background="#303030" Cursor="Hand" Click="AllResourcesBut_Click" FontSize="14"/>
+        </StackPanel>
+        <TextBlock x:Name="ResultBlock" Grid.Row="2" Grid.ColumnSpan="2" TextWrapping="Wrap" FontSize="18" Margin="15 10 15 20" Foreground="#879696" Background="#202424" Padding="15"/>
+    </Grid>
+</Window>

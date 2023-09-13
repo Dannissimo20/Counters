@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <ApplicationIcon>logo.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentWPF" Version="0.10.2" />
+      <PackageReference Include="LiveCharts" Version="0.9.7" />
+      <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+      <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-beta.516" />
+      <PackageReference Include="MaterialDesignColors" Version="2.1.0-ci343" />
+      <PackageReference Include="MaterialDesignThemes" Version="4.7.0-ci343" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CountersLibrary\CountersLibrary.csproj" />
+    </ItemGroup>
+
+</Project>
